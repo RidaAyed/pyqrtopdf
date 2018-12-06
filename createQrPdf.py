@@ -4,6 +4,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 import os
+import re
 import qrcode
 
 
@@ -28,9 +29,12 @@ def qrcode_to_pdf(data, directory):
     pdf, imgTemp = PdfFileWriter(), BytesIO()
     imgDoc = canvas.Canvas(imgTemp, pagesize=A4)
     imgDoc.drawImage(img_path.format(1), 30, 590)
+    imgDoc.drawString(30, 580, data)
     imgDoc.save()
+    pattern = re.compile('[^a-zA-Z0-9]|_')
+    fn = re.sub(pattern, '%', data)
     pdf.addPage(PdfFileReader(BytesIO(imgTemp.getvalue())).getPage(0))
-    pdf.write(open(f'{directory}qr_code_{data}.pdf', "wb"))
+    pdf.write(open(f'{directory}qr_code_{fn}.pdf', "wb"))
     os.remove(img_path)  # delete the temporary image
 
 
