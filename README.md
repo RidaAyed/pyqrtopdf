@@ -1,3 +1,4 @@
+![](https://i.imgur.com/zZPCeA5.png)
 # pyqrtopdf
 QR Code written to a PDF file with Python.
 
