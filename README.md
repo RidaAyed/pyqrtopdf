@@ -7,7 +7,7 @@ This module will convert from string to a qr code and export the qr image to an 
 <b>Library Dependencies</b>: `PyPDF2`, `reportlab`, `qrcode`<br>
 <b>Python Version</b>: `3.6+`
 
-In the command line: `py C:/createQrPdf.py -i "sample string" -o "C:/Dropbox/"`<br>
+In the command line: `py C:/createQrPdf.py -i "C:/Docs/reports/" -o "C:/"`<br>
 
 Arguments:<br>
 
