@@ -1,15 +1,26 @@
+# PyQRtoPDF
+
+<b>Description</b>
+
+Transform data to QR Code attached in A4 PDF file.
+
 ![](https://i.imgur.com/zZPCeA5.png)
-# pyqrtopdf
-QR Code written to a PDF file with Python.
 
-This module will convert from string to a qr code and export the qr image to an A4 PDF File.
+<b>Python Version</b>
 
-<b>Library Dependencies</b>: `PyPDF2`, `reportlab`, `qrcode`<br>
-<b>Python Version</b>: `3.6+`
+3.6 and later
 
-In the command line: `py C:/createQrPdf.py -i "C:/Docs/reports/" -o "C:/"`<br>
+<b>Dependencies</b>
 
-Arguments:<br>
+    pip install PyPDF2 reportlab qrcode
 
-`-i` :: <i>string to be converted in qr format</i><br>
-`-o` :: <i>the output directory of file</i>
+<b>Sypnosis</b>
+
+Open <b>`cmd.exe`</b> as <b>administrator</b> and run:
+
+    py C:/pyqrtopdf.py -data "C:/Docs/reports" -out "C:/"
+
+<b>Arguments</b>
+
+`-data` (str) input data
+`-out` (str) PDF save directory
